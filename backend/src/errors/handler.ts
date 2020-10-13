@@ -25,7 +25,7 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
             errors[error.path] = error.errors;
         });
 
-        return response.status(400).json({ message: 'Validação falhou', errors })
+        return res.status(400).json({ message: 'Validação falhou', errors })
     }
     
     console.error(err);
